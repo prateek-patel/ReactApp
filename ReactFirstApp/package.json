@@ -1,0 +1,22 @@
+{
+  "name": "demo-react-app",
+  "version": "1.0.0",
+  "description": "this is my first react application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u001b[2~\u001b[2~ \u001b[2~https://github.com/prateek-patel/ReactApp.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Prateek Patel",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
