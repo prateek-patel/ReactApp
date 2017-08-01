@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>React - Template</title>
+<title>React - State</title>
 <link rel="stylesheet" type="text/css" href="./css/main.css">
 <script src="./js/react.min.js"></script>
 <script src="./js/react-dom.min.js"></script>
@@ -15,34 +15,33 @@
     
     <script type="text/babel">
 
-        var Comment = React.createClass({
+        var Checkbox = React.createClass({
 
-            edit: function() {
-                alert('Edit comment');
+            getInitialState: function() {
+                return {checked: true};
             },
 
-            remove: function() {
-                alert('Remove comment');
+            handleChecked: function() {
+                this.setState({checked: !this.state.checked});
             },
 
             render: function() {
-                return (
-                    <div className = "commentContainer">
-                    <div className="commentText">{this.props.children}</div>
-                    <button onClick={this.edit} className="button-primary">Edit</button>
-                    <button onClick={this.remove} className="button-danger">Remove</button>
-                    </div>
+                    var msg;
+                    if(this.state.checked) {
+                        msg = 'checked';
+                    } else {
+                        msg = 'unchecked';
+                    }
+                    return (
+                        <div>
+                            <input type="checkbox" onChange={this.handleChecked} defaultChecked={this.state.checked} />
+                            <h3> Checkbox is {msg}</h3>
+                        </div>
                 );
             }
         });
 
-        ReactDOM.render(
-            <div className="board">
-                <Comment>Hey now</Comment>
-                <Comment>Tuna</Comment>
-                <Comment>Beans</Comment>
-            </div>
-            , document.getElementById('container'));
+        ReactDOM.render(<Checkbox />, document.getElementById('container'));
     </script>
 
 </body>
